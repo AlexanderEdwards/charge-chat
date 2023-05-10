@@ -34,6 +34,7 @@ async function loadSuperchargerData() {
         $setOnInsert: { id: item.id },
         $set: {
           location: polygon,
+          name: item.name
           // Include any other fields you want to store
         }
       },
