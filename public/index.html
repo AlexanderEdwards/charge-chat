@@ -16,7 +16,7 @@
                 const latitude = position.coords.latitude;
                 const longitude = position.coords.longitude;
 
-                const response = await fetch(`http://http://139.59.130.149:3000/findSupercharger?latitude=${latitude}&longitude=${longitude}`);
+                const response = await fetch(`http://139.59.130.149:3000/findSupercharger?latitude=${latitude}&longitude=${longitude}`);
                 const text = await response.text();
 
                 document.getElementById('result').textContent = text;
