@@ -9,7 +9,7 @@ async function loadSuperchargerData() {
   const db = client.db('charge-chat');
   const collection = db.collection('superchargers');
 
-  const radius = 100 / 111000; // Convert yards to roughly degrees
+  const radius = 300 / 111000; // Convert yards to roughly degrees
   const sides = 36; // Number of polygon sides
 
   for (const item of data) {
