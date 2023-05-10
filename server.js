@@ -29,6 +29,7 @@ async function findSupercharger(latitude, longitude) {
 }
 
 app.get('/findSupercharger', async (req, res) => {
+    console.log('hit the endpoint')
   if (!req.query.latitude || !req.query.longitude) {
     res.status(400).send('Missing latitude or longitude');
     return;
