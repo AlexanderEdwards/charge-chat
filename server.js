@@ -38,7 +38,7 @@ app.get('/findSupercharger', async (req, res) => {
   const longitude = parseFloat(req.query.longitude);
 
   const supercharger = await findSupercharger(latitude, longitude);
-
+  console.log('supercharger***', supercharger);
   if (supercharger) {
     res.send(`You are within ${supercharger.id}`);
   } else {
