@@ -27,9 +27,13 @@
             }
 
             const response = await fetch(`http://139.59.130.149:3000/findSupercharger?latitude=${latitude}&longitude=${longitude}`);
-             const data = await response.json();
-
+            if (response.status === 204) {
+            document.getElementById('result').textContent = 'No Supercharger found in your location.';
+            } else {
+            const data = await response.json();
             document.getElementById('result').textContent = data.id;
+            }
+
         }
     </script>
 </body>

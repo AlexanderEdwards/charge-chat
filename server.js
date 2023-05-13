@@ -44,7 +44,7 @@ app.get('/findSupercharger', async (req, res) => {
     //res.send(`You are within ${supercharger.id}`);
     res.status(200).json({id: supercharger.id, name: supercharger.name});
   } else {
-    res.send('No supercharger nearby.');
+    res.status(204).json({});
   }
 });
 
