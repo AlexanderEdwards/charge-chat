@@ -81,7 +81,7 @@ app.get('/findSupercharger', async (req, res) => {
 
 app.use(express.static('public'));
 
-app.listen(port, () => {
+const server =app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
 
