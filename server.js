@@ -41,7 +41,8 @@ app.get('/findSupercharger', async (req, res) => {
   const supercharger = await findSupercharger(latitude, longitude);
   console.log('supercharger***', supercharger);
   if (supercharger) {
-    res.send(`You are within ${supercharger.id}`);
+    //res.send(`You are within ${supercharger.id}`);
+    res.status(200).json({id: supercharger.id, name: supercharger.name});
   } else {
     res.send('No supercharger nearby.');
   }
