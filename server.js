@@ -10,7 +10,6 @@ const wss = new WebSocket.Server({ noServer: true });
 const sessions = {};
 
 wss.on('connection', (ws, req) => {
-  console.log('new socket connection', ws, req);
   const superchargerId = req.url.slice(1);
 
   if (!sessions[superchargerId]) {
@@ -21,6 +20,7 @@ wss.on('connection', (ws, req) => {
   sessions[superchargerId].clients.add(ws);
 
   ws.on('message', (message) => {
+    console.log('new message', message)
     sessions[superchargerId].clients.forEach((client) => {
       if (client !== ws) {
         client.send(message);
