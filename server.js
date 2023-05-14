@@ -10,6 +10,7 @@ const wss = new WebSocket.Server({ noServer: true });
 const sessions = {};
 
 wss.on('connection', (ws, req) => {
+  console.log('new socket connection', ws, req);
   const superchargerId = req.url.slice(1);
 
   if (!sessions[superchargerId]) {
